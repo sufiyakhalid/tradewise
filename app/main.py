@@ -7,6 +7,7 @@ from app.core.database import connect_to_db
 from app.core.scheduler import scheduler, setup_scheduled_tasks
 from app.routes import portfolio, market, scrape_table, screener, app_logs
 import logging
+import os
 
 load_dotenv()
 
@@ -60,8 +61,10 @@ setup_scheduled_tasks(scheduler)
 async def startup_event():
     logging.info("Starting the scheduler")
     print("Starting the scheduler")
+    print(f"Starting the scheduler on port {os.getenv('PORT')}")
+
     # await connect_to_db()
-    scheduler.start()
+    # scheduler.start()
 
 
 @app.on_event("shutdown")
