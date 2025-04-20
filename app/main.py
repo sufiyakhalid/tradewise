@@ -59,7 +59,8 @@ setup_scheduled_tasks(scheduler)
 @app.on_event("startup")
 async def startup_event():
     logging.info("Starting the scheduler")
-    await connect_to_db()
+    print("Starting the scheduler")
+    # await connect_to_db()
     scheduler.start()
 
 
