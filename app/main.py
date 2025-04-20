@@ -70,7 +70,7 @@ async def startup_event():
 @app.on_event("shutdown")
 def shutdown_event():
     logging.info("Shutting down the scheduler")
-    scheduler.shutdown()
+    # scheduler.shutdown()
 
 
 @app.get("/")
