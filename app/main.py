@@ -54,7 +54,7 @@ app.include_router(screener.router, prefix="/screener", tags=["Charlink Screener
 app.include_router(app_logs.router, prefix="/app_logs", tags=["App Logs"])
 
 # Setup scheduled tasks
-setup_scheduled_tasks(scheduler)
+# setup_scheduled_tasks(scheduler)
 
 
 @app.on_event("startup")
@@ -62,8 +62,6 @@ async def startup_event():
     logging.info("Starting the scheduler")
     print("Starting the scheduler")
     print(f"Starting the scheduler on port {os.getenv('PORT')}")
-
-    # await connect_to_db()
     # scheduler.start()
 
 
@@ -71,7 +69,7 @@ async def startup_event():
 def shutdown_event():
     logging.info("Shutting down the scheduler")
     # scheduler.shutdown()
-    
+
 @app.get("/healthcheck")
 async def healthcheck():
     return {"status": "ok"}
