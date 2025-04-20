@@ -71,7 +71,10 @@ async def startup_event():
 def shutdown_event():
     logging.info("Shutting down the scheduler")
     # scheduler.shutdown()
-
+    
+@app.get("/healthcheck")
+async def healthcheck():
+    return {"status": "ok"}
 
 @app.get("/")
 async def root():
