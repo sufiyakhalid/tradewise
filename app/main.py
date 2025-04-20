@@ -59,9 +59,10 @@ app.include_router(app_logs.router, prefix="/app_logs", tags=["App Logs"])
 
 @app.on_event("startup")
 async def startup_event():
-    logging.info("Starting the scheduler")
-    print("Starting the scheduler")
-    print(f"Starting the scheduler on port {os.getenv('PORT')}")
+    pass
+    # logging.info("Starting the scheduler")
+    # print("Starting the scheduler")
+    # print(f"Starting the scheduler on port {os.getenv('PORT')}")
     # scheduler.start()
 
 
