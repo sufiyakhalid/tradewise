@@ -59,17 +59,14 @@ setup_scheduled_tasks(scheduler)
 
 @app.on_event("startup")
 async def startup_event():
-    pass
-    # logging.info("Starting the scheduler")
-    # print("Starting the scheduler")
-    print(f"Starting the scheduler on port {os.getenv('PORT')}")
+    logging.info(f"Starting the scheduler on port {os.getenv('PORT')}")
     scheduler.start()
 
 
 @app.on_event("shutdown")
 def shutdown_event():
     logging.info("Shutting down the scheduler")
-    # scheduler.shutdown()
+    scheduler.shutdown()
 
 @app.get("/healthcheck")
 async def healthcheck():
