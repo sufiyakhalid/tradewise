@@ -11,7 +11,7 @@ router = APIRouter()
 # MongoDB Configuration
 MONGO_URI = settings.MONGODB_URL
 DB_NAME = "stock_database"
-COLLECTION_NAME = "stock_data"
+COLLECTION_NAME = "test_stock_data"
 
 # Initialize MongoDB client
 client = AsyncIOMotorClient(MONGO_URI)
