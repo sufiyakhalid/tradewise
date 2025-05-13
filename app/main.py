@@ -62,7 +62,7 @@ async def startup_event():
     pass
     # logging.info("Starting the scheduler")
     # print("Starting the scheduler")
-    # print(f"Starting the scheduler on port {os.getenv('PORT')}")
+    print(f"Starting the scheduler on port {os.getenv('PORT')}")
     scheduler.start()
 
 
