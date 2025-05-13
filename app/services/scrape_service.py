@@ -41,7 +41,7 @@ async def fetch_stock_data() -> None:
         db = get_mongo_database()
 
         # Update MongoDB
-        await update_mongodb_data(db[COLLECTION_NAME], COLLECTION_NAME, updated_stock)
+        # await update_mongodb_data(db[COLLECTION_NAME], COLLECTION_NAME, updated_stock)
         await update_mongodb_data(db[TEST_COLLECTION_NAME], TEST_COLLECTION_NAME, updated_stock)
 
         logging.info("Stock data successfully updated in MongoDB.")
